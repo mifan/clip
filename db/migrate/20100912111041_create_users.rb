@@ -8,14 +8,12 @@ class CreateUsers < ActiveRecord::Migration
       t.string :mobile, :null => true
 
 
-      #t.enum :gender
-
       t.string :crypted_password, :null => false
       t.string :password_salt, :null => false
       t.string :persistence_token, :null => false
 
 
-
+      t.integer :status, :limit => 3, :default => 0, :null => false
 
       #t.integer :login_count, :default => 0, :null => false
       #t.datetime :last_request_at
