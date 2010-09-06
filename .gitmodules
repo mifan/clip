@@ -1,0 +1,3 @@
+[submodule "public/stylesheets/oocss"]
+	path = public/stylesheets/oocss
+	url = http://github.com/stubbornella/oocss.git
