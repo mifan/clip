@@ -1,0 +1,17 @@
+!!! Strict
+%html{ :xmlns => "http://www.w3.org/1999/xhtml" }
+  %head
+    %meta{ "http-equiv" => "Content-Type", :content => "text/html; charset=utf-8" }/
+    %title Clip
+    %meta{ :name => "keywords", :content => "key words1" }/
+    %meta{ :name => "description", :content => "description words" }/
+    %link{ :rel => "stylesheet", :type => "text/css", :media => "all", :href => "/stylesheets/oocss/core/libraries.css" }
+    %link{ :rel => "stylesheet", :type => "text/css", :media => "all", :href => "/stylesheets/oocss/core/content.css" }
+    %link{ :rel => "stylesheet", :type => "text/css", :media => "all", :href => "/stylesheets/oocss/core/template/template.css" }
+    %link{ :rel => "stylesheet", :type => "text/css", :media => "all", :href => "/stylesheets/oocss/core/template/clip.css" }
+  %body
+    .page
+      .head Head
+      .body
+        = yield
+      .foot Foot
