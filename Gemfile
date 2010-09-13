@@ -8,6 +8,7 @@ gem 'rails', '3.0.0'
 gem 'mysql'
 gem 'haml'
 gem 'authlogic'
+gem 'enumerated_attribute'
 
 # Use unicorn as the web server
 # gem 'unicorn'
