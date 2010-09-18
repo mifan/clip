@@ -94,6 +94,7 @@ ul.navigation li {
 
 .input-field:hover,.input-field:focus{
   border:1px solid #666666;
+  background-color: #efefef;
 }
 .field-desc {
 color:#666666;
