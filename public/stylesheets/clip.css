@@ -2,25 +2,48 @@ body {
   background:none repeat scroll 0 0 #C0DEED;
 }
 
+
+
+.rightCol {
+  width: 280px;
+}
+
+
+.foot{
+  font-size:0.8em;
+  margin:0 auto 3.5em 2%;
+  padding:0 10px;
+}
+
+/***************header begin ***********/
+
+.head{
+  padding:10px;
+  min-height:65px;
+  height:65px;
+}
+
 #logo {
   background:transparent url(../images/logo.png) no-repeat scroll 0 0;
   float:left;
   width:155px;
   height:32px;
-  margin: 17px 0 5px 42px;
-  padding: 10px 0 0 40px;
+  margin: 8px 0 5px 2px;
+  padding: 10px 0 0 0px;
   text-indent: -2000px;
 }
 
 .round {
   -moz-border-radius:5px 5px 5px 5px;
+  border-radius:5px 5px 5px 5px;
 }
 
 ul.navigation {
-  background:none repeat scroll 0 0 #FFFFFF;
+  background:none repeat scroll 0 0 #fff;
   float:right;  
   display:inline-block;
-  padding:0 0.7em;
+  padding:0 0.7em 0.5em 0.7em;
+  margin:17px 0 0 0;
   white-space:nowrap;
 }
 
@@ -37,4 +60,66 @@ ul.navigation li {
   display:inline;
   float:left;
   padding:7px 8px 0 8px;
+}
+
+/***************header end ***********/
+
+
+.field {
+  margin-bottom:15px;
+}
+
+.inline {
+   display:inline;
+}
+ 
+.block {
+  display:block;
+}
+
+.title{
+  color:#333;
+  font-size:13px;
+  font-weight:normal;
+  margin-bottom:2px;
+}
+
+.input-field {
+  border:1px solid #DDDDDD;
+  -moz-border-radius:5px 5px 5px 5px;
+  border-radius:5px 5px 5px 5px;
+  width:280px;
+  padding:7px;
+}
+
+.input-field:hover,.input-field:focus{
+  border:1px solid #666666;
+}
+.field-desc {
+color:#666666;
+display:block;
+font-size:10px;
+padding-top:0.3em;
+}
+
+.common-btn {
+  background:url("/images/bg-btn.gif") repeat-x scroll 0 0 #DDDDDD;
+  border-color:#DDDDDD #DDDDDD #CCCCCC;
+  border-style:solid;
+  border-width:1px;
+  -moz-border-radius:4px 4px 4px 4px;
+  border-radius:4px 4px 4px 4px;
+  color:#333333;
+  cursor:pointer;
+  font:400 11px/14px "tahoma";
+  margin:0;
+  overflow:visible;
+  padding:4px 8px 5px;
+  text-shadow:1px 1px 0 #FFFFFF;
+  width:auto;
+}
+.common-btn:hover,.common-btn:focus {
+  background-position: 0 -6px;
+  border-color:#999999 #999999 #888888;
+  color: #000;
 }

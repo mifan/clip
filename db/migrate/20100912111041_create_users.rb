@@ -3,12 +3,12 @@ class CreateUsers < ActiveRecord::Migration
     create_table :users do |t|
 
 
-      t.string :login, :null => false
-      t.string :email, :null => false
-      t.string :mobile, :null => false
+      t.string :login,  :null => false
+      t.string :email,  :null => false
+      t.string :mobile, :null => true
 
 
-      t.enum :gender
+      #t.enum :gender
 
       t.string :crypted_password, :null => false
       t.string :password_salt, :null => false
