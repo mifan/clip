@@ -1,0 +1,40 @@
+body {
+  background:none repeat scroll 0 0 #C0DEED;
+}
+
+#logo {
+  background:transparent url(../images/logo.png) no-repeat scroll 0 0;
+  float:left;
+  width:155px;
+  height:32px;
+  margin: 17px 0 5px 42px;
+  padding: 10px 0 0 40px;
+  text-indent: -2000px;
+}
+
+.round {
+  -moz-border-radius:5px 5px 5px 5px;
+}
+
+ul.navigation {
+  background:none repeat scroll 0 0 #FFFFFF;
+  float:right;  
+  display:inline-block;
+  padding:0 0.7em;
+  white-space:nowrap;
+}
+
+ul.signout {
+  width: 220px;
+}
+
+ul.signin {
+  width: 325px;
+}
+
+ul.navigation li {
+  background:transparent none no-repeat scroll 0 50%;
+  display:inline;
+  float:left;
+  padding:7px 8px 0 8px;
+}

@@ -8,10 +8,10 @@
     %link{ :rel => "stylesheet", :type => "text/css", :media => "all", :href => "/stylesheets/oocss/core/libraries.css" }
     %link{ :rel => "stylesheet", :type => "text/css", :media => "all", :href => "/stylesheets/oocss/core/content.css" }
     %link{ :rel => "stylesheet", :type => "text/css", :media => "all", :href => "/stylesheets/oocss/core/template/template.css" }
-    %link{ :rel => "stylesheet", :type => "text/css", :media => "all", :href => "/stylesheets/oocss/core/template/clip.css" }
+    %link{ :rel => "stylesheet", :type => "text/css", :media => "all", :href => "/stylesheets/clip.css" }
   %body
     .page
-      .head Head
+      =render :partial => "tiles/head" 
       .body
         = yield
-      .foot Foot
+      =render(:partial => "tiles/foot")
