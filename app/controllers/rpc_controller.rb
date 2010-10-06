@@ -43,6 +43,20 @@ class RpcController < ApplicationController
     #format.html # index.html.erb  
     # format.xml { render :layout => false } 
     #end 
+    login =   params[:user]
+    password =   params[:pass]
+
+    if login.blank? || password.blank? 
+      @rc = -1
+      @message = 'System Error'
+      return
+    end
+
+    session = UserSession.new(:login => login, :password => password , :remember_me => true)
+    session.save!
+
+      @rc = 0
+      @message = 'OK'
   end
 
   def revise_coords
