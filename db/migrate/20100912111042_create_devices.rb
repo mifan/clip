@@ -1,7 +1,9 @@
 class CreateDevices < ActiveRecord::Migration
   def self.up
     create_table :devices do |t|
-      t.integer   :sensor,  :limit => 3, :default => 0, :null => false
+      t.string    :devid,   :null => false, :limit => 30
+
+      t.integer   :sensor,  :limit => 3, :default => 0, :null => true
       t.integer   :status,  :limit => 3, :default => 0, :null => false
 
       t.string    :type,    :null => true

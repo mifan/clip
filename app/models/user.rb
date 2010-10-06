@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
-  acts_as_authentic
+  acts_as_authentic do |config|
+    config.validate_email_field    = false
+  end
 
-  enum_attr :gender, %w(male female)
+  has_many :devices
 
 end
