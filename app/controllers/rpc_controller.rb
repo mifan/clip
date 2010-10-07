@@ -53,15 +53,38 @@ class RpcController < ApplicationController
     end
 
     session = UserSession.new(:login => login, :password => password , :remember_me => true)
-    session.save!
-
+    if session.save
       @rc = 0
-      @message = 'OK'
+      @message = 'OK' #session.inspect
+      @userid = User.where(:login => login).first.id
+    else
+      @rc = -1
+      @message = 'System Error'
+    end
   end
 
   def revise_coords
   end
 
   def route_ex
+    user_id =   params[:userid]
+    devid =   params[:devid]
+    sensor =   params[:sensor]
+    lng = params[:lng]
+    lat = params[:lat]
+
+    if user_id.blank? || devid.blank? || devid.blank? || sensor.blank? || lat.blank? 
+      @rc = -1
+      @message = 'System Error'
+      return
+    end
+
+    device_id = Device.where( :devid => devid ).first.id
+    Coordinate.create!(:user_id => user_id, :device_id => device_id, :sensor => sensor, :lng => lng, :lat => lat )
+    @rc = 0
+    @message = 'OK'
+
   end
+
+
 end

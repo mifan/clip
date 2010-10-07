@@ -3,12 +3,12 @@ class CreateCoordinates < ActiveRecord::Migration
     create_table :coordinates do |t|
 
       #calcuted lat/lng
-      t.decimal :latitude,  :precision => 14, :scale => 10
-      t.decimal :longitude, :precision => 14, :scale => 10
+      t.decimal :latitude,  :precision => 14, :scale => 10, :null => false
+      t.decimal :longitude, :precision => 14, :scale => 10, :null => false
 
       #origin lat/lng send by user's device
-      t.decimal :lat,       :precision => 14, :scale => 10
-      t.decimal :lng,       :precision => 14, :scale => 10
+      t.decimal :lat,       :precision => 14, :scale => 10, :null => false
+      t.decimal :lng,       :precision => 14, :scale => 10, :null => false
 
       t.integer   :sensor,  :limit => 3, :default => 0, :null => false
 
