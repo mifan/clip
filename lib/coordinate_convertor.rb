@@ -9,7 +9,9 @@ module CoordinateConvertor
   MAX_LATITUDE = BigDecimal.new('85.05112878')
   MIN_LONGITUDE = BigDecimal.new('-180')
   MAX_LONGITUDE = BigDecimal.new('180')
-  PI_15 = PI(15)
+  DECIMAL_PREC = 15
+  PI_PREC = PI(DECIMAL_PREC)
+
 
 
 
@@ -22,12 +24,13 @@ module CoordinateConvertor
   end
 
   def latlng_to_pixel_xy(latitude,longitude,level_of_detail)
+
     latitude = safe_val(BigDecimal.new(latitude.to_s),MIN_LATITUDE,MAX_LATITUDE)
     longitude = safe_val(BigDecimal.new(longitude.to_s),MIN_LONGITUDE,MAX_LONGITUDE)
 
     x = (longitude +  180 ) /  360 
-    sin_latitude = sin( latitude * PI_15 / 180 )
-    y = 0.5 - log(1 + sin_latitude ) / (1 - sin_latitude ) / 4 * PI_15
+    sin_latitude = sin( latitude * PI_PREC / 180 )
+    y = 0.5 - log(1 + sin_latitude ) / (1 - sin_latitude ) / 4 * PI_PREC
 
     map_size_level = map_size(level_of_detail) 
     pixel_x = safe_val(x * map_size_level + 0.5, 0, map_size_level - 1 )
@@ -36,7 +39,15 @@ module CoordinateConvertor
     [pixel_x,pixel_y]
   end
 
-  def pixel_xy_to_latlng
+  def pixel_xy_to_latlng(pixel_x,pixel_y,level_of_detail)
+      map_size_level = map_size(level_of_detail)
+
+      x = safe_val(pixel_x,0,map_size_level - 1) / map_size_level - 0.5
+      y = 0.5 - safe_val(pixel_y,0,map_size_level - 1) / map_size_level
+
+      latitude = 90 - 360 * atan(exp(-y * 2 * PI_PREC ,DECIMAL_PREC), DECIMAL_PREC) / PI_PREC
+      longitude = 360 * x
+      [latitude,longitude]
   end
 
 end
