@@ -1,4 +1,9 @@
+require "coordinate_convertor"
 class RpcController < ApplicationController
+
+#include CoordinateConvertor
+  include CoordinateConvertor
+
   def quick_req
      #devid=000000000000000&user=superjj&pass=&email=dcc@mobile&mobile=1234567&sensor=1
     devid =  params[:devid]
@@ -7,8 +12,6 @@ class RpcController < ApplicationController
     email =  params[:email]
     mobile = params[:mobile]
     sensor = params[:sensor]
-
-
 
     if user.blank? || devid.blank? 
       @rc = -1
@@ -63,8 +66,35 @@ class RpcController < ApplicationController
     end
   end
 
+#next=ShowMap&lng=23.855000&lat=61.448083
   def revise_coords
+    lng = params[:lng]
+    lat = params[:lat]
+    
+    if lng.blank? || lng.blank? 
+      @rc = -1
+      @message = 'System Error'
+      return
+    end
+
+    lat = BigDecimal.new(lat)
+    lng = BigDecimal.new(lng)
+
+    x,y = latlng_to_pixel_xy(lat,lng,18)
+
+    x += 0
+    y += 0
+
+
+    @lat,@lng = pixel_xy_to_latlng(x,y,18)
+    @next_step = params[:next]
+    @rc = 0
+    @message = 'OK'
   end
+
+
+
+
 
   def route_ex
     user_id =   params[:userid]

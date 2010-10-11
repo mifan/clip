@@ -2,13 +2,15 @@
 <Response>
   <Header>
     <Command>ReviseCoords</Command>
-    <Next>ShowMap</Next>
-    <RC>0</RC>
-    <Message>OK</Message>
+    <Next><%=@next_step%></Next>
+    <RC><%=@rc%></RC>
+    <Message><%=@message%></Message>
     <Count>0</Count>
   </Header>
   <Body>
+    <% if @lat && @lng %>
     <LAT>61.448083</LAT>
     <LNG>23.855</LNG>
+    <% end %>
   </Body>
 </Response>
