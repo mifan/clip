@@ -7,7 +7,8 @@ gem 'rails', '3.0.0'
 
 gem 'mysql'
 gem 'haml'
-gem 'authlogic'
+gem 'authlogic', :git => 'git://github.com/binarylogic/authlogic.git'
+
 #gem 'enumerated_attribute'
 
 # Use unicorn as the web server
