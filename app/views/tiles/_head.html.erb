@@ -8,6 +8,7 @@
   </ul>
   <% else %>
   <ul class="navigation round signin">
+    <li>欢迎 <%= current_user.login %></li>
     <li><%= link_to "浏览", "/" %></li>
     <li><%= link_to "退出", user_session_path, :method => :delete, :confirm => "真的要退出?" %></li>
   </ul>
