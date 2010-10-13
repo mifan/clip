@@ -1,9 +1,15 @@
 <div class="head">
   <a id="logo" href="/" accesskey="1" title="Clip">Clip</a>
+  <% unless current_user %>
   <ul class="navigation round signout">
-    <li><%= link_to "帮助", "/" %></li>
     <li><%= link_to "浏览", "/" %></li>
-    <li><%= link_to "注册", "/" %></li>
-    <li><%= link_to "登录", "/" %></li>
+    <li><%= link_to "注册", "/users/new" %></li>
+    <li><%= link_to "登录", "/user_session/new" %></li>
   </ul>
+  <% else %>
+  <ul class="navigation round signin">
+    <li><%= link_to "浏览", "/" %></li>
+    <li><%= link_to "退出", user_session_path, :method => :delete, :confirm => "真的要退出?" %></li>
+  </ul>
+  <% end %>
 </div>

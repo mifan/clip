@@ -1,14 +1,14 @@
 .field
-  = form.label :email, :class => "title block"
+  = form.label :email, "邮箱", :class => "title block"
   = form.text_field :email, :class => "input-field"
   %span.field-desc 用此邮箱接收确认邮件才能完成注册。
 
 .field
-  = form.label :login, :class => "title block"
+  = form.label :login, "名号", :class => "title block"
   = form.text_field :login, :class => "input-field"
   %span.field-desc 最少2个字符，中、英文均可。
 
 .field
-  = form.label :password, :class => "title block"
+  = form.label :password, "密码", :class => "title block"
   = form.password_field :password, :class => "input-field"
-  %span.field-desc 最少2个字符，中、英文均可。
+  %span.field-desc 最少3个字符。

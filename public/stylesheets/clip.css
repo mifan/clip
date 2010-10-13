@@ -48,11 +48,11 @@ ul.navigation {
 }
 
 ul.signout {
-  width: 220px;
+  width: 180px;
 }
 
 ul.signin {
-  width: 325px;
+  width: 130px;
 }
 
 ul.navigation li {
@@ -123,4 +123,14 @@ padding-top:0.3em;
   background-position: 0 -6px;
   border-color:#999999 #999999 #888888;
   color: #000;
+}
+
+
+/*      validate error  */
+input.error {
+  border:1px solid #f37f32 !important;
+}
+label.error {
+  color:#f68335;
+  padding-left: 10px;
 }
