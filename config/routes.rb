@@ -4,5 +4,7 @@ Clip::Application.routes.draw do
 
   resources :users
 
+  root :to => "users#index"
+
   match '/rpc/:action' => 'rpc'
 end
